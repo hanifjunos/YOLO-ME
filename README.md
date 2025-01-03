@@ -1,6 +1,7 @@
 # YOLO-ME
-YOLO-ME model is developed for efficient object detection in aerial imagery using modified  YOLOv7 Tiny model
-Setup prerequisites
+YOLO-ME model is developed for efficient object detection in aerial imagery using modified  YOLOv7 Tiny model.
+
+**Setup prerequisites**
 The following setup is for Windows 10 with an NVIDIA-supported GPU. Ensure all the prerequisites are installed correctly before proceeding.
 1.	Python 3.7.7, 64 bit and numpy
 2.	Git Version 2.26.2
@@ -13,7 +14,7 @@ The following setup is for Windows 10 with an NVIDIA-supported GPU. Ensure all t
 9.	Configure OpenCV using CMake
 10.	Build OpenCV in Visual Studio
 
-Data preparation
+**Data preparation**
 1.	Place the images and label files of the respective datasets in the ‘data’ folder.
 2.	Create train.txt and test.txt files for the respective datasets. These files should list the image file paths relative to their directories.
 3.	Create a .names file containing the class names of the dataset, one class per line. Place this file in the ‘visdrone’ folder.
@@ -26,7 +27,8 @@ names = visdrone/obj.names
 backup = backup/
 
 2.	Place the YOLO-ME.cfg file in the ‘cfg’ folder.
-Training & testing
+
+**Training & testing**
 1.	Run the following command to start training on the VisDrone dataset:
 darknet.exe detector train cfg/obj_visdrone.data cfg/YOLO-ME_visdrone.cfg -map
 2.	Use the following command to test the trained model:
