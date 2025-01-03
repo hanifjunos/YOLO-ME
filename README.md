@@ -1,9 +1,10 @@
 # YOLO-ME
-YOLO-ME model is developed for efficient object detection in aerial imagery using modified  YOLOv7 Tiny model.
+YOLO-ME model is developed for efficient object detection in aerial imagery using modified YOLOv7 Tiny model
 
 **Setup prerequisites**
 
 The following setup is for Windows 10 with an NVIDIA-supported GPU. Ensure all the prerequisites are installed correctly before proceeding.
+
 1.	Python 3.7.7, 64 bit and numpy
 2.	Git Version 2.26.2
 3.	Cmake Version 3.17.2
@@ -23,23 +24,24 @@ The following setup is for Windows 10 with an NVIDIA-supported GPU. Ensure all t
 4.	Create .data files for each dataset and place them in the ‘cfg’ folder. The .data file should include the following structure:
 ```
 classes= 12
-train  = visdrone/train.txt  
-valid  = visdrone/test.txt  
-names = visdrone/obj.names  
+train  = vedai/train.txt  
+valid  = vedai/test.txt  
+names = vedai/obj.names  
 backup = backup/
 ```
-5.	Place the YOLO-ME.cfg file in the ‘cfg’ folder.
+4.	Place the YOLO-ME.cfg file in the ‘cfg’ folder.
 
 **Training & testing**
+
 1.	Run the following command to start training on the VisDrone dataset:
 ```
-darknet.exe detector train cfg/obj_visdrone.data cfg/YOLO-ME_visdrone.cfg -map
+model.exe detector train cfg/obj_visdrone.data cfg/YOLO-ME_visdrone.cfg -map
 ```
-2.	Use the following command to test the trained model:
+2.	Testing on visdrone dataset
 ```
-darknet.exe detector test cfg/obj_visdrone.data cfg/ YOLO-ME_visdrone.weights -dont_show
+model.exe detector test cfg/obj_visdrone.data cfg/YOLO-ME_visdrone.cfg Backup/YOLO-ME_visdrone.weights -dont_show
 ```
-3.	Run this command to evaluate the model's performance. mAP (Mean Average Precision):
+3.	Check mAP
 ```
-darknet.exe detector map cfg/obj_visdrone.data cfg/ YOLO-ME_visdrone.weights -dont_show
+model.exe detector map cfg/obj_visdrone.data cfg/YOLO-ME_visdrone.cfg Backup/YOLO-ME_visdrone.weights -dont_show
 ```
