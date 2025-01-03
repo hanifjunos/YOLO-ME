@@ -35,13 +35,13 @@ backup = backup/
 
 1.	Run the following command to start training on the VisDrone dataset:
 ```
-model.exe detector train cfg/obj_visdrone.data cfg/YOLO-ME_visdrone.cfg -map
+model.exe detector train cfg/obj_visdrone.data cfg/YOLO-ME.cfg -map
 ```
 2.	Testing on visdrone dataset
 ```
-model.exe detector test cfg/obj_visdrone.data cfg/YOLO-ME_visdrone.cfg Backup/YOLO-ME_visdrone.weights -dont_show
+model.exe detector test cfg/obj_visdrone.data cfg/YOLO-ME.cfg Backup/YOLO-ME.weights -dont_show
 ```
 3.	Check mAP
 ```
-model.exe detector map cfg/obj_visdrone.data cfg/YOLO-ME_visdrone.cfg Backup/YOLO-ME_visdrone.weights -dont_show
+model.exe detector map cfg/obj_visdrone.data cfg/YOLO-ME.cfg Backup/YOLO-ME.weights -dont_show
 ```
