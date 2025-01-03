@@ -20,7 +20,7 @@ The following setup is for Windows 10 with an NVIDIA-supported GPU. Ensure all t
 1.	Place the images and label files of the respective datasets in the ‘data’ folder.
 2.	Create train.txt and test.txt files for the respective datasets. These files should list the image file paths relative to their directories.
 3.	Create a .names file containing the class names of the dataset, one class per line. Place this file in the ‘visdrone’ folder.
-1.	Create .data files for each dataset and place them in the ‘cfg’ folder. The .data file should include the following structure:
+4.	Create .data files for each dataset and place them in the ‘cfg’ folder. The .data file should include the following structure:
 
 classes= 9
 train  = visdrone/train.txt  
@@ -28,7 +28,7 @@ valid  = visdrone/test.txt
 names = visdrone/obj.names  
 backup = backup/
 
-2.	Place the YOLO-ME.cfg file in the ‘cfg’ folder.
+5.	Place the YOLO-ME.cfg file in the ‘cfg’ folder.
 
 **Training & testing**
 1.	Run the following command to start training on the VisDrone dataset:
